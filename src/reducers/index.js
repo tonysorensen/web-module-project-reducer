@@ -6,7 +6,7 @@ export const initialState = {
     memory: 100
 }
 
-const calculateResult = (num1, num2, operation) => {
+const calculateResult = (state, num1, num2, operation) => {
     switch(operation) {
         case("+"):
             return num1 + num2;
@@ -14,6 +14,8 @@ const calculateResult = (num1, num2, operation) => {
             return num1 * num2;
         case("-"):
             return num1 - num2;
+        default:
+            return state.memory;
     }
 }
 
@@ -28,7 +30,7 @@ const reducer = (state, action) => {
         case(APPLY_NUMBER):
             return ({ 
                 ...state, 
-                total: calculateResult(state.total, action.payload, state.operation)
+                total: calculateResult(state, state.total, action.payload, state.operation)
             });
         
         case(CHANGE_OPERATION):
