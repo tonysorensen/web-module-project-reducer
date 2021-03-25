@@ -3,6 +3,7 @@ import reducer, { initialState } from "./reducers/index";
 import "./App.css";
 import {
   addOne,
+  addToMemory,
   applyNumber,
   changeOperation,
   clearDisplay,
@@ -39,7 +40,10 @@ function App() {
               </span>{" "}
             </div>{" "}
             <div className="row">
-              <CalcButton value={"M+"} /> <CalcButton value={"MR"} />{" "}
+              <CalcButton onClick={() => {
+                  dispatch(addToMemory(state.total));
+                }} value={"M+"} /> 
+              <CalcButton value={"MR"} />{" "}
               <CalcButton value={"MC"} />{" "}
             </div>{" "}
             <div className="row">
