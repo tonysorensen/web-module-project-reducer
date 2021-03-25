@@ -42,18 +42,24 @@ function App() {
               </span>{" "}
             </div>{" "}
             <div className="row">
-              <CalcButton onClick={() => {
+              <CalcButton
+                onClick={() => {
                   dispatch(addToMemory(state.total));
-                }} value={"M+"} /> 
-              <CalcButton onClick={() => {
+                }}
+                value={"M+"}
+              />
+              <CalcButton
+                onClick={() => {
                   dispatch(recall(state.memory));
                 }}
-              value={"MR"} />{" "}
-              <CalcButton onClick={()=>{
-                dispatch(clearMemory())
-              }}
-              
-              value={"MC"} />{" "}
+                value={"MR"}
+              />{" "}
+              <CalcButton
+                onClick={() => {
+                  dispatch(clearMemory());
+                }}
+                value={"MC"}
+              />{" "}
             </div>{" "}
             <div className="row">
               <CalcButton
