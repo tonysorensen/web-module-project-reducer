@@ -2,7 +2,9 @@ export const ADD_ONE = "ADD_ONE";
 export const CLEAR_DISPLAY ="CLEAR_DISPLAY"
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
-export const ADD_TO_MEMORY =""
+export const ADD_TO_MEMORY ="ADD_TO_MEMORY"
+export const RECALL="RECALL"
+
 export const addOne = () => {
     return({type:ADD_ONE});
 }
@@ -21,4 +23,8 @@ export const clearDisplay =() => {
 
 export const addToMemory= (total) => {
     return({type:ADD_TO_MEMORY, payload: total})
+}
+
+export const recall=(total) => {
+    return({type:RECALL, payload: total})
 }
