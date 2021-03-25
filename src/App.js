@@ -7,6 +7,7 @@ import {
   applyNumber,
   changeOperation,
   clearDisplay,
+  clearMemory,
   recall,
 } from "./actions/index";
 import TotalDisplay from "./components/TotalDisplay";
@@ -48,7 +49,11 @@ function App() {
                   dispatch(recall(state.memory));
                 }}
               value={"MR"} />{" "}
-              <CalcButton value={"MC"} />{" "}
+              <CalcButton onClick={()=>{
+                dispatch(clearMemory())
+              }}
+              
+              value={"MC"} />{" "}
             </div>{" "}
             <div className="row">
               <CalcButton
